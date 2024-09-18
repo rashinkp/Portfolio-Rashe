@@ -249,3 +249,81 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+var errName = document.getElementById('err-name');
+var errEmail = document.getElementById('err-email');
+var errSub = document.getElementById('err-sub');
+var errMsg = document.getElementById('err-msg');
+
+
+function validateName(){
+  var name = document.getElementById('contact-name').value;
+  if(name.length == 0){
+    errName.innerHTML = "Name is required";
+    return false
+  }
+  if(!isNaN(parseFloat(name)) && isFinite(name)){
+    errName.innerHTML = "No number accepted";
+    return false
+  }
+  errName.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #147500;"></i>'
+  return true;
+
+
+}
+
+function validateEmail(){
+  var email = document.getElementById('contact-email').value;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(email.length == 0){
+    errEmail.innerHTML = "Email is required";
+    return false;
+  }
+  if (!emailRegex.test(email)) {
+    errEmail.innerHTML = "Not valid email";
+    return false;
+  }
+
+
+  errEmail.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #147500;"></i>'
+  return true;
+
+}
+
+
+
+function validateSubject(){
+  var sub = document.getElementById('contact-sub').value;
+  if(sub.length == 0){
+    errSub.innerHTML = "Subject is required";
+    return false
+  }
+
+  errSub.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #147500;"></i>'
+  return true;
+
+
+}
+
+
+  function validateMessage(){
+    var msg = document.getElementById('contact-msg').value;
+    if(msg.length == 0){
+      errMsg.innerHTML = "Message is required";
+      return false;
+    }
+
+    if(msg.length<20){
+      errMsg.innerHTML = "Minimum 20 letters";
+      return false;
+    }
+  
+    errMsg.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #147500;"></i>'
+    return true;
+
+
+
+  }
+  
+

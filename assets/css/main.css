@@ -1638,3 +1638,15 @@ section,
   background-color: rgb(3, 74, 156);
 }
 
+.form-part{
+  position: relative;
+}
+
+
+.error-msg{
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  color: red;
+  font-size: 13px;
+}
