@@ -346,12 +346,17 @@ function validateSubject(){
 
   function validateForm(){
 
-    if(!validateEmail() || !validateName() || !validateMessage){
+    if(!validateEmail() ){
       errEmail.innerHTML = "Fill the field";
-      errMsg.innerHTML = "Fill the field";
+    }
+    if(!validateName() ){
       errName.innerHTML = "Fill the field";
+    }
+    if(!validateSubject() ){
       errSub.innerHTML = "Fill the field";
-      return false;
+    }
+    if(!validateMessage() ){
+      errMsg.innerHTML = "Fill the field";
     }
     
     if(!validateName() || !validateEmail() || !validateMessage() || !validateSubject()){
