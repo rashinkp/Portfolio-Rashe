@@ -1650,3 +1650,10 @@ section,
   color: red;
   font-size: 13px;
 }
+
+
+.portfolio-item img{
+  width: 350px;
+  height: 280px;
+  object-fit: cover;
+}
