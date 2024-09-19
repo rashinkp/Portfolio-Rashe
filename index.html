@@ -672,36 +672,37 @@
           <div class="row gy-4">
 
             <div class="col-md-6 form-part">
-              <input type="text" id="contact-name" name="name" class="form-control" placeholder="Your Name" onkeyup="validateName()" required>
+              <input type="text" id="contact-name" name="name" class="form-control" placeholder="Your Name" onkeyup="validateName()" onfocus="validateName()" required>
               <span class="error-msg" id="err-name"></span>
             </div>
 
             <div class="col-md-6 form-part">
-              <input type="email" id="contact-email" class="form-control" name="email" placeholder="Your Email" onkeyup="validateEmail()" required>
+              <input type="email" id="contact-email" class="form-control" name="email" placeholder="Your Email" onkeyup="validateEmail()" onfocus="validateEmail()" required>
               <span class="error-msg" id="err-email"></span>
             </div>
 
             <div class="col-md-12 form-part">
-              <input type="text" id="contact-sub" class="form-control" name="subject" placeholder="Subject" onkeyup="validateSubject()" required>
+              <input type="text" id="contact-sub" class="form-control" name="subject" placeholder="Subject" onkeyup="validateSubject()" onfocus="validateSubject()" required>
               <span class="error-msg" id="err-sub"></span>
             </div>
 
             <div class="col-md-12 form-part">
-              <textarea class="form-control" onkeyup="validateMessage()" id="contact-msg" name="message" rows="6" placeholder="Message" required></textarea>
+              <textarea class="form-control" onkeyup="validateMessage()" onfocus="validateMessage()" id="contact-msg" name="message" rows="6" placeholder="Message" required></textarea>
               <span class="error-msg" id="err-msg"></span>
             </div>
 
             <div class="col-md-12 text-center">
 
 
-
-              <button type="submit" class="send-msg-btn">Send Message</button>
+              
+              <button type="submit" onclick="return validateForm()" class="send-msg-btn">Send Message</button>
+              
             </div>
-
+            <span id="error-submit"></span>
           </div>
 
           <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-          <span id="error-submit"></span>
+          
         </form><!-- End Contact Form -->
 
       </div>

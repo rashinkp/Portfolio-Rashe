@@ -1674,3 +1674,11 @@ section,
 .c-social-links {
   margin-top: 30px;
 }
+
+
+#error-submit{
+  right: 25px;
+  top: 10px;
+  color: red;
+  font-size: 13px;
+}

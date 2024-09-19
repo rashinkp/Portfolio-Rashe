@@ -255,7 +255,7 @@ var errName = document.getElementById('err-name');
 var errEmail = document.getElementById('err-email');
 var errSub = document.getElementById('err-sub');
 var errMsg = document.getElementById('err-msg');
-
+var errSubmit = document.getElementById('error-submit');
 
 function validateName(){
   var name = document.getElementById('contact-name').value;
@@ -267,6 +267,16 @@ function validateName(){
     errName.innerHTML = "No number accepted";
     return false
   }
+
+  //checking for white spaces
+  if(name.trim() == ""){
+    errName.innerHTML = "Content required";
+    return false
+  }
+
+
+
+
   errName.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #147500;"></i>'
   return true;
 
@@ -284,7 +294,7 @@ function validateEmail(){
     errEmail.innerHTML = "Not valid email";
     return false;
   }
-
+  
 
   errEmail.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #147500;"></i>'
   return true;
@@ -298,6 +308,11 @@ function validateSubject(){
   if(sub.length == 0){
     errSub.innerHTML = "Subject is required";
     return false
+  }
+
+  if(sub.trim() == ""){
+    errSub.innerHTML = "Content is needed"
+    return false;
   }
 
   errSub.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #147500;"></i>'
@@ -318,12 +333,36 @@ function validateSubject(){
       errMsg.innerHTML = "Minimum 20 letters";
       return false;
     }
+
+    if(msg.trim() == ""){
+      errMsg.innerHTML = "Content is needed";
+      return false;
+    }
   
     errMsg.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #147500;"></i>'
     return true;
+  }
 
 
+  function validateForm(){
 
+    if(!validateEmail() || !validateName() || !validateMessage){
+      errEmail.innerHTML = "Fill the field";
+      errMsg.innerHTML = "Fill the field";
+      errName.innerHTML = "Fill the field";
+      errSub.innerHTML = "Fill the field";
+      return false;
+    }
+    
+    if(!validateName() || !validateEmail() || !validateMessage() || !validateSubject()){
+      errSubmit.innerHTML = "Please fill the form correctly";
+      return false;
+    }
+
+    
+
+    errSubmit.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #147500;"></i>'
+    return true;
   }
   
 
