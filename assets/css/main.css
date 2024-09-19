@@ -1664,3 +1664,13 @@ section,
   height: 120px;
   object-fit: cover;
 }
+
+.c-social-links i{
+  color: white;
+  margin:0px 20px;
+  font-size: 30px;
+}
+
+.c-social-links {
+  margin-top: 30px;
+}
