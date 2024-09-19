@@ -1657,3 +1657,10 @@ section,
   height: 280px;
   object-fit: cover;
 }
+
+
+.testimonial-item img{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
